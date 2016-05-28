@@ -7,9 +7,9 @@
 /build
 /captures
 /External Libraries
-app/build/
-app/src/main/res
-app/src/main/java/gov/nasa/tepli4ka/android
+src/build/
+src/src/main/res
+src/src/main/java/gov/nasa/farmars/android
 androidTest
 libs
 test
