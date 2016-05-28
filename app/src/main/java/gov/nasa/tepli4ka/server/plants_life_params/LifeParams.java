@@ -1,41 +1,27 @@
 package gov.nasa.tepli4ka.server.plants_life_params;
 
+import java.util.Calendar;
 import gov.nasa.tepli4ka.plant.Plant;
+import gov.nasa.tepli4ka.server.send.SendToServer;
 
 /**
  * Created by nick on 28.05.16.
  */
 public class LifeParams {
 
-    private int mMinAirTemperature = 20;
-    private int mMaxAirTemperature = 30;
-    private int mMinGroundTemperature = 10;
-    private int mMaxGroundTemperature = 30;
-    private int mMinAirHumidity = 10;
-    private int mMaxAirHumidity = 50;
-    private int mMinGroundHumidity = 5;
-    private int mMaxGroundHumidity = 30;
-    private int mMaxOxygen = 100;
-    private int mMinOxygen = 50;
     private CurrentParams mCurrentParams;
 
     public void checkParams(Plant plant) {
         mCurrentParams = CurrentParams.getInstance();
-        if (!checkAirHumidity(plant)) {
-            // TODO: 28.05.16 Air humidity problems
-        }
-        if (!checkAirTemp(plant)) {
-            // TODO: 28.05.16 Air temp problems
-        }
-        if (!checkGroundHumidity(plant)) {
-            // TODO: 28.05.16 Ground humidity problems
-        }
-        if (!checkGroundTemp(plant)) {
-            // TODO: 28.05.16 Ground temp problems
-        }
-        if (!checkOxygen(plant)) {
-            // TODO: 28.05.16 Oxygen problems
-        }
+        boolean mAirHumidity = checkAirHumidity(plant);
+        boolean mAirTemp = checkAirTemp(plant);
+        boolean mGroundHumidity = checkGroundHumidity(plant);
+        boolean mGroundTemp = checkGroundTemp(plant);
+        boolean mOxygen = checkOxygen(plant);
+        boolean mLight = checkLight();
+
+        SendToServer mSendToServer = new SendToServer();
+        mSendToServer.setParams(mAirTemp, mAirHumidity, mGroundTemp, mGroundHumidity, mOxygen, mLight);
 
     }
 
@@ -62,5 +48,11 @@ public class LifeParams {
     private boolean checkOxygen(Plant plant) {
         int oxygen = mCurrentParams.getOxygen();
         return oxygen <= plant.mMaxOxygen && oxygen >= plant.mMinOxygen;
+    }
+
+    private boolean checkLight() {
+        Calendar mCalendar = Calendar.getInstance();
+        int time = mCalendar.get(Calendar.HOUR_OF_DAY);
+        return time <= 21 && time >= 5;
     }
 }

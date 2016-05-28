@@ -6,17 +6,17 @@ package gov.nasa.tepli4ka.plant;
  */
 public class Plant {
 
-    private String mName;
-    public int mMinAirTemperature;
-    public int mMaxAirTemperature;
-    public int mMinGroundTemperature;
-    public int mMaxGroundTemperature;
-    public int mMinAirHumidity;
-    public int mMaxAirHumidity;
-    public int mMinGroundHumidity;
-    public int mMaxGroundHumidity;
-    public int mMaxOxygen;
-    public int mMinOxygen;
+    private String mName = "Kartoshka";
+    public int mMinAirTemperature = 20;
+    public int mMaxAirTemperature = 30;
+    public int mMinGroundTemperature = 10;
+    public int mMaxGroundTemperature = 30;
+    public int mMinAirHumidity = 10;
+    public int mMaxAirHumidity = 50;
+    public int mMinGroundHumidity = 5;
+    public int mMaxGroundHumidity = 30;
+    public int mMaxOxygen = 100;
+    public int mMinOxygen = 50;
 
     public void setName(String name) {
         mName = name;
