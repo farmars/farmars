@@ -1,4 +1,4 @@
-package gov.nasa.tepli4ka.plant;
+package gov.nasa.farmars.plant;
 
 import java.util.ArrayList;
 

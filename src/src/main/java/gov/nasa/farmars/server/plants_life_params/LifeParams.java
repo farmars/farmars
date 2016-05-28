@@ -1,8 +1,8 @@
-package gov.nasa.tepli4ka.server.plants_life_params;
+package gov.nasa.farmars.server.plants_life_params;
 
 import java.util.Calendar;
-import gov.nasa.tepli4ka.plant.Plant;
-import gov.nasa.tepli4ka.server.send.SendToServer;
+import gov.nasa.farmars.plant.Plant;
+import gov.nasa.farmars.server.send.SendToServer;
 
 /**
  * Created by nick on 28.05.16.

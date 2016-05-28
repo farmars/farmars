@@ -1,4 +1,4 @@
-package gov.nasa.tepli4ka.plant;
+package gov.nasa.farmars.plant;
 
 /**
  * Created by nick on 28.05.16.

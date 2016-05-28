@@ -1,6 +1,6 @@
-package gov.nasa.tepli4ka.server.send;
+package gov.nasa.farmars.server.send;
 
-import gov.nasa.tepli4ka.server.HttpServer;
+import gov.nasa.farmars.server.HttpServer;
 
 /**
  * Created by nick on 28.05.16.

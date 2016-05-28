@@ -1,4 +1,4 @@
-package gov.nasa.tepli4ka.server.plants_life_params;
+package gov.nasa.farmars.server.plants_life_params;
 
 /**
  * Created by nick on 28.05.16.

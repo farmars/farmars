@@ -1,4 +1,4 @@
-package gov.nasa.tepli4ka.air.temperature;
+package gov.nasa.farmars.air.temperature;
 
 /**
  * Created by nick on 28.05.16.
