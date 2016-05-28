@@ -1,0 +1,22 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+/gradle
+.DS_Store
+/build
+/captures
+/External Libraries
+app/build/
+app/src/main/res
+app/src/main/java/gov/nasa/tepli4ka/android
+androidTest
+libs
+test
+*.xml
+*.pro
+build.gradle
+gradle.properties
+gradlew
+gradlew.bat
+settings.gradle
