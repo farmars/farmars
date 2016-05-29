@@ -1,5 +1,7 @@
 package gov.nasa.farmars.server;
 
+import gov.nasa.farmars.server.plants_life_params.CurrentParams;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
@@ -16,6 +18,11 @@ import com.sun.net.httpserver.HttpServer;
 public class FarmHttpServer {
 
     public static int SERVER_PORT = 8085;
+
+    public static String AIR_HUMIDITY_PAR = "h";
+    public static String TEMP = "t";
+    public static String LOCATION = "l";
+
 
     public static void main(String[] args) throws Exception {
         HttpServer server = HttpServer.create(new InetSocketAddress(SERVER_PORT), 0);
@@ -36,7 +43,10 @@ public class FarmHttpServer {
 
     static class GetDataHandler implements HttpHandler {
         public void handle(HttpExchange httpExchange) throws IOException {
-            Map<String,String> parms = FarmHttpServer.queryToMap(httpExchange.getRequestURI().getQuery());
+            Map<String, String> parms = FarmHttpServer.queryToMap(httpExchange.getRequestURI().getQuery());
+
+            CurrentParams current = CurrentParams.getInstance();
+            //current.setAirHumidity(Integer.of(parms.get("")));
             FarmHttpServer.writeResponse(httpExchange, printParams(parms));
         }
     }

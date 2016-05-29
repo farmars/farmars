@@ -6,6 +6,8 @@ package gov.nasa.farmars.plant;
  */
 public class Plant {
 
+    private String id;
+
     private String mName = "Kartoshka";
     public int mMinAirTemperature = 20;
     public int mMaxAirTemperature = 30;
@@ -105,4 +107,13 @@ public class Plant {
     public void setMinOxygen(int minOxygen) {
         mMinOxygen = minOxygen;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }
