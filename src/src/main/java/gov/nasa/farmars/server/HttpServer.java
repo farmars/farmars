@@ -15,7 +15,7 @@ public class HttpServer {
     public static String mResponse = "Hi";
 
     public static void main(String[] args) throws Throwable {
-        ServerSocket ss = new ServerSocket(8055);
+        ServerSocket ss = new ServerSocket(8085);
         while (true) {
             Socket s = ss.accept();
             System.err.println("Client accepted");
