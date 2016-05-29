@@ -18,7 +18,7 @@ public class FarmHttpServer {
     public static int SERVER_PORT = 8085;
 
     public static void main(String[] args) throws Exception {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress(SERVER_PORT), 0);
         server.createContext("/info", new InfoHandler());
         server.createContext("/d", new GetDataHandler());
         server.createContext("/c", new GetCommandHandler());
@@ -29,7 +29,7 @@ public class FarmHttpServer {
 
     static class InfoHandler implements HttpHandler {
         public void handle(HttpExchange httpExchange) throws IOException {
-            String response = "Use /d - to recive data from devices.\n Use /c - to get commands for devices";
+            String response = "Use /d - to recive data from devices.\nUse /c - to get commands for devices";
             FarmHttpServer.writeResponse(httpExchange, response.toString());
         }
     }
